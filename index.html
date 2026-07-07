@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Social App</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#f2f2f2;
+}
+
+.header{
+background:#1877f2;
+color:white;
+padding:15px;
+text-align:center;
+font-size:24px;
+font-weight:bold;
+}
+
+.post{
+background:white;
+margin:20px;
+padding:15px;
+border-radius:10px;
+box-shadow:0 2px 5px gray;
+}
+
+img{
+width:100%;
+border-radius:10px;
+}
+
+button{
+margin-top:10px;
+padding:10px 15px;
+border:none;
+border-radius:8px;
+background:#1877f2;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+input{
+width:70%;
+padding:10px;
+margin-top:10px;
+}
+
+#comments{
+margin-top:10px;
+color:green;
+font-weight:bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+📱 My Social App
+</div>
+
+<div class="post">
+
+<h2>Motivation Post</h2>
+
+<img src="https://picsum.photos/400/250">
+
+<p>आज का लक्ष्य: कभी हार मत मानो।</p>
+
+<button onclick="like()">❤️ Like</button>
+
+<button onclick="share()">📤 Share</button>
+
+<br><br>
+
+<input type="text" id="commentBox" placeholder="Comment लिखें">
+
+<button onclick="comment()">💬 Comment</button>
+
+<p id="comments"></p>
+
+</div>
+
+<script>
+
+function like(){
+alert("❤️ आपने Like किया");
+}
+
+function share(){
+alert("📤 Post Share हो गई");
+}
+
+function comment(){
+let text=document.getElementById("commentBox").value;
+
+if(text==""){
+alert("पहले Comment लिखें");
+return;
+}
+
+document.getElementById("comments").innerHTML="💬 "+text;
+
+document.getElementById("commentBox").value="";
+}
+
+</script>
+
+</body>
+</html>
+<div id="loginPage">
+
+<h2>🔐 Login</h2>
+
+<input type="text" id="username" placeholder="अपना नाम लिखें">
+
+<br><br>
+
+<button onclick="login()">Login</button>
+
+</div>
+
+<div id="homePage" style="display:none;">
+
+<h2>📱 My Social App</h2>
+
+<p>Welcome <span id="name"></span> 👋</p>
+
+</div>
+function login(){
+
+let user = document.getElementById("username").value;
+
+if(user==""){
+alert("पहले अपना नाम लिखें");
+return;
+}
+
+document.getElementById("loginPage").style.display="none";
+document.getElementById("homePage").style.display="block";
+document.getElementById("name").innerHTML=user;
+
+}
+
+<input type="file" id="photo" accept="image/*">
+<br><br>
+<img id="preview" style="width:100%;display:none;border-radius:10px;">
+
